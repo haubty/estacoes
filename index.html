@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Store - A Loja do Frio e Calor</title>
+    <!-- Inclui Tailwind CSS para um design moderno e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonte "Poppins" para um visual mais limpo e "Orbitron" para o título -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Ícones para os botões e para o título -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8; /* Fundo cinza claro suave */
+        }
+        /* Estilos personalizados para o gradiente do cabeçalho */
+        .header-bg {
+            background: linear-gradient(to right, #4a90e2, #50e3c2);
+        }
+        /* Fonte para o título principal */
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Cabeçalho com gradiente e sombra -->
+    <header class="header-bg shadow-lg p-6 text-white text-center rounded-b-3xl mb-12">
+        <!-- Ícone e título centralizados -->
+        <h1 class="text-8xl font-bold font-orbitron tracking-tight flex justify-center items-center">
+            <!-- Ícone de floco de neve da biblioteca Remix Icon -->
+            <i class="ri-snowflake-fill text-7xl text-blue-200 mr-4"></i> Cold Store
+        </h1>
+        <p class="mt-2 text-xl font-light">Sua loja de produtos de refrigeração e calor</p>
+    </header>
+
+    <main class="container mx-auto px-4">
+
+        <!-- Painel do Carrinho de Compras -->
+        <div class="bg-white p-6 rounded-2xl shadow-xl mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Seu Carrinho</h2>
+            <ul id="cart-items" class="mb-4 text-gray-600 space-y-2">
+                <!-- Itens do carrinho serão adicionados aqui via JavaScript -->
+            </ul>
+            <div class="flex justify-between items-center border-t-2 border-gray-200 pt-4">
+                <span class="text-xl font-bold text-gray-900">Total:</span>
+                <span id="cart-total" class="text-2xl font-bold text-blue-600">R$0,00</span>
+            </div>
+        </div>
+        
+        <!-- Seção de Produtos em Destaque -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-semibold text-center mb-8 text-blue-800">
+                Produtos em Destaque
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cartão de Produto - Ar Condicionado -->
+                <div class="product-card bg-white p-6 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+                    <!-- Contêiner para manter a proporção da imagem -->
+                    <div class="relative pb-[100%] rounded-xl overflow-hidden mb-4">
+                        <img src="https://imgs.casasbahia.com.br/1562795826/1xg.jpg" alt="Ar condicionado barato" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <h3 class="product-name text-xl font-bold text-gray-900 mb-2">Ar condicionado barato</h3>
+                    <p class="product-price text-lg font-semibold text-blue-600 mb-4">R$50,00</p>
+                    <button class="add-to-cart-btn w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:bg-blue-600 transition-colors duration-300">
+                        <i class="ri-shopping-cart-fill mr-2"></i> Adicionar ao Carrinho
+                    </button>
+                </div>
+                
+                <!-- Cartão de Produto - Ar Condicionado Portátil -->
+                <div class="product-card bg-white p-6 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+                    <!-- Contêiner para manter a proporção da imagem -->
+                    <div class="relative pb-[100%] rounded-xl overflow-hidden mb-4">
+                        <img src="https://www.frigelar.com.br/ccstore/v1/images/?source=/file/v2285129868183857841/products/kit9378_1.jpg&height=300&width=300" alt="Ar condicionado portátil" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <h3 class="product-name text-xl font-bold text-gray-900 mb-2">Ar condicionado portátil</h3>
+                    <p class="product-price text-lg font-semibold text-blue-600 mb-4">R$850,00</p>
+                    <button class="add-to-cart-btn w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:bg-blue-600 transition-colors duration-300">
+                        <i class="ri-shopping-cart-fill mr-2"></i> Adicionar ao Carrinho
+                    </button>
+                </div>
+                
+                <!-- Cartão de Produto - Ventilador Barato -->
+                <div class="product-card bg-white p-6 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+                    <!-- Contêiner para manter a proporção da imagem -->
+                    <div class="relative pb-[100%] rounded-xl overflow-hidden mb-4">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv00sZPPx11KN1Aauy0x9PjzYywXUlsDXiGg&s" alt="Ventilador barato" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <h3 class="product-name text-xl font-bold text-gray-900 mb-2">Ventilador barato</h3>
+                    <p class="product-price text-lg font-semibold text-blue-600 mb-4">R$99,00</p>
+                    <button class="add-to-cart-btn w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:bg-blue-600 transition-colors duration-300">
+                        <i class="ri-shopping-cart-fill mr-2"></i> Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Mais Produtos -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-semibold text-center mb-8 text-blue-800">
+                Mais Produtos
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cartão de Produto - Geladeira -->
+                <div class="product-card bg-white p-6 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+                    <!-- Contêiner para manter a proporção da imagem -->
+                    <div class="relative pb-[100%] rounded-xl overflow-hidden mb-4">
+                        <img src="https://a-static.mlcdn.com.br/800x560/geladeira-refrigerador-samsung-smart-frost-free-inox-french-door-preto-564l-com-dispenser-de-agua-e-gelo-rf27cg591/magazineluiza/237246700/fd5804fc031adc745b3a2b7106c3bd24.jpg" alt="Geladeira" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <h3 class="product-name text-xl font-bold text-gray-900 mb-2">Geladeira</h3>
+                    <p class="product-price text-lg font-semibold text-blue-600 mb-4">R$17.999,99</p>
+                    <button class="add-to-cart-btn w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:bg-blue-600 transition-colors duration-300">
+                        <i class="ri-shopping-cart-fill mr-2"></i> Adicionar ao Carrinho
+                    </button>
+                </div>
+                
+                <!-- Cartão de Produto - Ventilador de Teto -->
+                <div class="product-card bg-white p-6 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+                    <!-- Contêiner para manter a proporção da imagem -->
+                    <div class="relative pb-[100%] rounded-xl overflow-hidden mb-4">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSplSvc2UW-Pg5Kaa8985hZ38Hemm_YgKQ0Qw&s" alt="Ventilador de teto" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <h3 class="product-name text-xl font-bold text-gray-900 mb-2">Ventilador de teto</h3>
+                    <p class="product-price text-lg font-semibold text-blue-600 mb-4">R$420,00</p>
+                    <button class="add-to-cart-btn w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:bg-blue-600 transition-colors duration-300">
+                        <i class="ri-shopping-cart-fill mr-2"></i> Adicionar ao Carrinho
+                    </button>
+                </div>
+                
+                <!-- Cartão de Produto - Freezer -->
+                <div class="product-card bg-white p-6 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+                    <!-- Contêiner para manter a proporção da imagem -->
+                    <div class="relative pb-[100%] rounded-xl overflow-hidden mb-4">
+                        <img src="https://consul.vtexassets.com/arquivos/ids/250682/01---Consul_Freezer_CHB53EB_Imagem_Frontal.png?v=638757424348770000" alt="Freezer" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <h3 class="product-name text-xl font-bold text-gray-900 mb-2">Freezer</h3>
+                    <p class="product-price text-lg font-semibold text-blue-600 mb-4">R$3.000,00</p>
+                    <button class="add-to-cart-btn w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:bg-blue-600 transition-colors duration-300">
+                        <i class="ri-shopping-cart-fill mr-2"></i> Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nova Seção de Outros Produtos -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-semibold text-center mb-8 text-blue-800">
+                Outros Produtos
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cartão de Produto - Climatizador de Ar -->
+                <div class="product-card bg-white p-6 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+                    <!-- Contêiner para manter a proporção da imagem -->
+                    <div class="relative pb-[100%] rounded-xl overflow-hidden mb-4">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjCL9JFcDyA1bjZu2Lv1b7OvG1_SGu18seLQ&s" alt="Climatizador de Ar" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <h3 class="product-name text-xl font-bold text-gray-900 mb-2">Climatizador de Ar</h3>
+                    <p class="product-price text-lg font-semibold text-blue-600 mb-4">R$350,00</p>
+                    <button class="add-to-cart-btn w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:bg-blue-600 transition-colors duration-300">
+                        <i class="ri-shopping-cart-fill mr-2"></i> Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Cartão de Produto - Mini Geladeira USB -->
+                <div class="product-card bg-white p-6 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+                    <!-- Contêiner para manter a proporção da imagem -->
+                    <div class="relative pb-[100%] rounded-xl overflow-hidden mb-4">
+                        <img src="https://a-static.mlcdn.com.br/1500x1500/mini-geladeira-frigobar-2-latas-ou-garrafa-usb-esfria-aquece-lorben/oliststore/mglif0m10o7oi2h8/46766b1489b06f2f1c72472c7e88d618.jpeg" alt="Mini Geladeira USB" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <h3 class="product-name text-xl font-bold text-gray-900 mb-2">Mini Geladeira USB</h3>
+                    <p class="product-price text-lg font-semibold text-blue-600 mb-4">R$150,00</p>
+                    <button class="add-to-cart-btn w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:bg-blue-600 transition-colors duration-300">
+                        <i class="ri-shopping-cart-fill mr-2"></i> Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <!-- Cartão de Produto - Ice Maker Portátil -->
+                <div class="product-card bg-white p-6 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+                    <!-- Contêiner para manter a proporção da imagem -->
+                    <div class="relative pb-[100%] rounded-xl overflow-hidden mb-4">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Qw5B9crXiJiIWFmy-mYAIQI5oicXPervFg&s" alt="Ice Maker Portátil" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <h3 class="product-name text-xl font-bold text-gray-900 mb-2">Ice Maker Portátil</h3>
+                    <p class="product-price text-lg font-semibold text-blue-600 mb-4">R$550,00</p>
+                    <button class="add-to-cart-btn w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:bg-blue-600 transition-colors duration-300">
+                        <i class="ri-shopping-cart-fill mr-2"></i> Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Pega todos os botões "Adicionar ao Carrinho"
+        const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+        // Pega os elementos da lista e do total do carrinho
+        const cartItemsList = document.getElementById('cart-items');
+        const cartTotalDisplay = document.getElementById('cart-total');
+
+        // Inicializa o preço total
+        let cartTotal = 0;
+
+        // Função para formatar o preço
+        function formatPrice(price) {
+            return `R$${price.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.')}`;
+        }
+
+        // Função para atualizar o total do carrinho
+        function updateCartTotal(price) {
+            cartTotal += price;
+            cartTotalDisplay.innerText = formatPrice(cartTotal);
+        }
+
+        // Função para remover um item do carrinho
+        function removeItemFromCart(event) {
+            const listItem = event.target.closest('li');
+            const priceText = listItem.dataset.price;
+            const numericPrice = parseFloat(priceText);
+            
+            updateCartTotal(-numericPrice); // Subtrai o valor do total
+            listItem.remove(); // Remove o item da lista
+        }
+
+        // Itera sobre cada botão e adiciona um listener de evento de clique
+        addToCartBtns.forEach(button => {
+            button.addEventListener('click', () => {
+                // Pega o elemento pai do cartão do produto
+                const productCard = button.closest('.product-card');
+                
+                // Pega o nome e o preço do produto
+                const productName = productCard.querySelector('.product-name').innerText;
+                const productPriceText = productCard.querySelector('.product-price').innerText;
+
+                // Extrai o valor numérico da string de preço
+                const numericPrice = parseFloat(productPriceText.replace('R$', '').replace('.', '').replace(',', '.'));
+
+                // Adiciona o preço ao total
+                updateCartTotal(numericPrice);
+
+                // Cria um novo item de lista para o carrinho
+                const newCartItem = document.createElement('li');
+                newCartItem.className = 'flex items-center justify-between';
+                newCartItem.innerHTML = `
+                    <span>${productName} - ${productPriceText}</span>
+                    <button class="remove-item-btn text-red-500 hover:text-red-700 transition-colors duration-200">
+                        <i class="ri-delete-bin-line"></i>
+                    </button>
+                `;
+                // Armazena o preço numérico no elemento para facilitar a remoção
+                newCartItem.dataset.price = numericPrice;
+
+                cartItemsList.appendChild(newCartItem);
+
+                // Adiciona o listener de evento para o novo botão de remoção
+                newCartItem.querySelector('.remove-item-btn').addEventListener('click', removeItemFromCart);
+            });
+        });
+    </script>
+</body>
+</html>
